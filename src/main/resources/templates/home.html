@@ -4,11 +4,29 @@
 
     <head>
         <title>CodeTask</title>
+        <link rel="stylesheet" th:href="@{/css/home.css}"/>
     </head>
 
     <body>
-        <h1>Hello, World!</h1>
-        <img th:src="@{/images/nikpog.svg}"/>
+        <header class="page-header">
+            <div class="code-task-logo">
+                <img th:src="@{/images/nikpog.svg}" alt="Логотип CodeTask"/>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Список задач</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <figure class="demiurg">
+                <img th:src="@{/images/skuf.jpg}" alt="Создатель"/>
+                <figcaption>Создатель</figcaption>
+            </figure>
+        </main>
+
     </body>
 
 </html>
