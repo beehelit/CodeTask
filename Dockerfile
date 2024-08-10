@@ -3,6 +3,7 @@ RUN apk update && apk add openssh
 
 # SSH
 EXPOSE 22
+EXPOSE 8080
 RUN echo "StrictHostKeyChecking=no" >> /etc/ssh/ssh_config
 RUN mkdir /var/run/sshd
 RUN ssh-keygen -A
