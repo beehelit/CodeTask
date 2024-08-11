@@ -4,9 +4,41 @@
 
     <head>
         <title>CodeTask</title>
+        <link rel="stylesheet" th:href="@{/css/login.css}"/>
+        <link rel="stylesheet" th:href="@{/css/pieces/header.css}"/>
     </head>
 
     <body>
-        <h1>Логин</h1>
+        <header th:replace="~{pieces/header :: header}"></header>
+
+        <main>
+            <form method="POST" th:object="${loginForm}" class="login-form">
+                <div class="input-login">
+                    <label for="login">Логин:</label>
+                    <input type="text" th:field="*{login}"/>
+                </div>
+                
+                <div class="validation-error" th:if="${#fields.hasErrors('login')}" th:errors="*{login}">
+                    Invalid login
+                </div>
+    
+                <div class="input-password">
+                    <label for="password">Пароль:</label>
+                    <input type="password" th:field="*{password}"/>
+                </div>
+                
+                <div class="validation-error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
+                    Invalid password
+                </div>
+    
+                <div class="submit-button">
+                    <button>Submit</button>
+                </div>
+            </form>
+        </main>
+
+        <footer class="page-footer">
+            <h2>Футер</h2>
+        </footer>
     </body>
 </html>

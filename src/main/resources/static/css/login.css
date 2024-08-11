@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.login-form {
+    margin-left: 500px;
+    margin-right: 500px;
+
+    margin-top: 250px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 250px;
+
+    border: 2px solid green;
+    border-radius: 5px;
+
+    padding: 5px;
+}
+
+.login-form > button {
+    width: 30px;
+}
+
+.login-form  label {
+    font-family: monospace;
+    margin-right: 30px;
+}
+
+.login-form > div {
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+.page-footer {
+    border-top: 2px solid;
+    border-top-color: pink;
+}
