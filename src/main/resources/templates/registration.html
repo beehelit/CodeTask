@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>CodeTask</title>
+        <link rel="stylesheet" th:href="@{/css/registration.css}"/>
+        <link rel="stylesheet" th:href="@{/css/pieces/header.css}"/>
+    </head>
+
+    <body>
+        <header th:replace="~{pieces/header :: header}"></header>
+
+        <main>
+            <form method="POST" th:object="${registrationForm}" class="registration-form">
+                <div class="labels-inputs"> 
+                    <div class="labels">
+                        <label for="email">Email:</label>
+                        <label for="login">Логин:</label>
+                        <label for="password">Пароль:</label>
+                        <label for="passwordRery">Пароль еще раз:</label>
+                    </div>
+
+                    <div class="inputs">
+                        <input type="text" th:field="*{email}"/>
+                        <input type="text" th:field="*{login}"/>
+                        <input type="password" th:field="*{password}"/>
+                        <input type="password" th:field="*{passwordRetry}"/>
+                    </div>
+                </div>
+
+                <div class="errors">
+                    <div class="validation-error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+                        Invalid email
+                    </div>
+
+                    <div class="validation-error" th:if="${#fields.hasErrors('login')}" th:errors="*{login}">
+                        Invalid login
+                    </div>
+                    
+                    <div class="validation-error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
+                        Invalid password
+                    </div>
+
+                    <div class="validation-error" th:if="${#fields.hasErrors('passwordRetry')}" th:errors="*{passwordRetry}">
+                        Invalid passwordRetry
+                    </div>
+                </div>
+    
+                <div class="submit-button">
+                    <input type="submit" value="Отправить"/>
+                </div>
+            </form>
+        </main>
+
+        <footer class="page-footer">
+            <h2>Футер</h2>
+        </footer>
+    </body>
+</html>

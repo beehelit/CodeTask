@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.registration-form {
+    margin-left: 600px;
+    margin-right: 600px;
+
+    margin-top: 250px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 250px;
+
+    border: 2px solid green;
+    border-radius: 5px;
+
+    padding: 5px;
+}
+
+.registration-form .labels-inputs {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+.labels > label {
+    margin-right: 10px;
+}
+
+.page-footer {
+    border-top: 2px solid;
+    border-top-color: pink;
+}
+
+.inputs > input,
+.labels > label {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.labels {
+    text-align: end;
+}
+
+.errors {
+    margin-bottom: 20px;
+}
+
+.errors div {
+    text-align: center;
+    color: red;
+}
+
+.submit-button {
+    align-self: center;
+}
+
