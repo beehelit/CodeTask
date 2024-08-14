@@ -13,26 +13,30 @@
 
         <main>
             <form method="POST" th:object="${loginForm}" class="login-form">
-                <div class="input-login">
-                    <label for="login">Логин:</label>
-                    <input type="text" th:field="*{login}"/>
+                <div class="labels-inputs"> 
+                    <div class="labels">
+                        <label for="login">Логин:</label>
+                        <label for="password">Пароль:</label>
+                    </div>
+
+                    <div class="inputs">
+                        <input type="text" th:field="*{login}"/>
+                        <input type="password" th:field="*{password}"/>
+                    </div>
                 </div>
-                
-                <div class="validation-error" th:if="${#fields.hasErrors('login')}" th:errors="*{login}">
-                    Invalid login
-                </div>
-    
-                <div class="input-password">
-                    <label for="password">Пароль:</label>
-                    <input type="password" th:field="*{password}"/>
-                </div>
-                
-                <div class="validation-error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
-                    Invalid password
+
+                <div class="errors">
+                    <div class="validation-error" th:if="${#fields.hasErrors('login')}" th:errors="*{login}">
+                        Invalid login
+                    </div>
+                    
+                    <div class="validation-error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
+                        Invalid password
+                    </div>
                 </div>
     
                 <div class="submit-button">
-                    <button>Submit</button>
+                    <input type="submit" value="Отправить"/>
                 </div>
             </form>
         </main>
